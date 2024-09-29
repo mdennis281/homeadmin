@@ -1,0 +1,202 @@
+{
+  "test": {
+    "bab1a39ec79aa41dd4f88ae0238672fbbcf2f240d4c6f841cc9273d27151b9d3": {
+      "On": 0
+    },
+    "748cb4b66f137b6b12399be1048b107d220b86573fa3e45077aff11b395f13b5": {
+      "On": 0
+    }
+  },
+  "leavingHome": {
+    "c67dd26b7e237f386488dcbdc7036fdbb1e49e393075da7119379da085d6bd04": {
+      "TargetDoorState": 1
+    },
+    "6cb1f64f75a458beb64a2d56cea4f76b96e8200e0ec14a45d5d83a033b4b07fe": {
+      "TargetDoorState": 1
+    },
+    "e725a85fa1d6450cdbde4d17d98c9d1b04a395f941434a40c7dde4a84cefc764": {
+      "TargetDoorState": 1
+    },
+    "62fdf4aa265dafbe0d2842162dce228fd3c24b66599030d693eb7b8598240ef3": {
+      "On": 0
+    },
+    "5edf46fd6fa627ac25ebb608713c005e2c29fe1113833e13c679fbd404dfee3b": {
+      "Brightness": 15
+    },
+    "42a94e312af4414ca14e1ca455496b7f445b5595d63eb7ef88c46bd7f434faf6": {
+      "Brightness": 15
+    },
+    "013e9e3b19f20bf7816c3b5b681a69876f3edd91caa35914a6072642208557ec": {
+      "Brightness": 15
+    },
+    "f13fbaec7b586531e223d9e62f7278801f8d316200586d37e168ce425e9189b7": {
+      "Brightness": 15
+    },
+    "15e1c3a4a9cc73d53e3f83b5a1fe379ea4bf5b221996d562f571fced27ee7104": {
+      "Brightness": 15
+    },
+    "26551fdf0ab7235fb006fd90f42af3fdf396050b9d568d93d7a85afc3d7f5bac": {
+      "On": 0
+    },
+    "aa99257bc184cc8dd2dfbcf8651568e9c4eeedc4e43bf02009dcd53c411c364c": {
+      "On": 0
+    },
+    "d02d4dbcced3e5c83097ca2913a8172eb35018e313ce8d84c838305c86c25c3e": {
+      "On": 0
+    },
+    "504fdb6692360fcf4820e6741a3784b8fdb02ac4dcda5d5019db2134e5641c1f": {
+      "On": 0
+    },
+    "b685d9e360129f105fd5c6e0dd6a1783cbd65eb1a209471fae6221e36697cb4f": {
+      "On": 0
+    },
+    "169bd225fd3e21a2e9d2ad30d7a99cf8b6b451fd711d9b3d01b2febd162667ff": {
+      "On": 0
+    },
+    "57034329e7b0893d2a5d1e25c14479c587fb56059221b641ba60047e123661f0": {
+      "On": 0
+    },
+    "1e4d15d1eb87a6ad8e54aaf53b7e043d9422d478528a379b794df396893a9fff": {
+      "On": 0
+    },
+    "b6f72b890ab8c34fd2bf8bb1fdef6323cddd1eb51f1774dc673fb4705baf58db": {
+      "On": 0
+    },
+    "748cb4b66f137b6b12399be1048b107d220b86573fa3e45077aff11b395f13b5": {
+      "On": 0
+    },
+    "73ee8c477411e382939c41b8bdbe89f09e21344e88fc4aab562de8e12e26b5ae": {
+      "On": 0
+    },
+    "bab1a39ec79aa41dd4f88ae0238672fbbcf2f240d4c6f841cc9273d27151b9d3": {
+      "On": 0
+    },
+    "1c329846b499937de4b0cd3511a91e0bc32b9d7d63e1e5028518f4d9429aa790": {
+      "On": 0
+    },
+    "adfd9513d10e62239c66e60078338149a51f5c0b90423742c3092592214a7806": {
+      "On": 0
+    },
+    "f1476fd3bfcc5ce2a3dadac5bfbff290b90ebf6b3d034af3b9cc5aa22938c41b": {
+      "On": 0
+    },
+    "c54d42ea18bb480e7fc1424af09337495ff614e766ba50c8fa389db42387fd6e": {
+      "On": 0
+    },
+    "84c81110cca2cb9946542ad7d3027e598b3fbb6fa59b444f38d95a3bde814211": {
+      "On": 0
+    },
+    "e313084cd2356b8b5520c9e979638c9d5793a294148083c2726246566acba6c1": {
+      "On": 0
+    },
+    "1832069cd703c08f7e85befce88a0c1fa127a05cdf05f5246636eb6bf5cab1ab": {
+      "On": 0
+    },
+    "60abed4d9c3d07ab9fddd2225e470bc88c9a131252d4d75c7f17b7441fb6c815": {
+      "On": 0
+    }
+  },
+  "arrivingDoor1": {
+    "c67dd26b7e237f386488dcbdc7036fdbb1e49e393075da7119379da085d6bd04": {
+      "TargetDoorState": 0
+    },
+    "62fdf4aa265dafbe0d2842162dce228fd3c24b66599030d693eb7b8598240ef3": {
+      "On": 1
+    }
+  },
+  "arrivingDoor2": {
+    "6cb1f64f75a458beb64a2d56cea4f76b96e8200e0ec14a45d5d83a033b4b07fe": {
+      "TargetDoorState": 0
+    },
+    "62fdf4aa265dafbe0d2842162dce228fd3c24b66599030d693eb7b8598240ef3": {
+      "On": 1
+    }
+  },
+  "arrivingDoor3": {
+    "e725a85fa1d6450cdbde4d17d98c9d1b04a395f941434a40c7dde4a84cefc764": {
+      "TargetDoorState": 0
+    },
+    "62fdf4aa265dafbe0d2842162dce228fd3c24b66599030d693eb7b8598240ef3": {
+      "On": 1
+    }
+  },
+  "arrivingNight": {
+    "1e4d15d1eb87a6ad8e54aaf53b7e043d9422d478528a379b794df396893a9fff": {
+      "On": 1
+    },
+    "5edf46fd6fa627ac25ebb608713c005e2c29fe1113833e13c679fbd404dfee3b": {
+      "Brightness": 100
+    },
+    "42a94e312af4414ca14e1ca455496b7f445b5595d63eb7ef88c46bd7f434faf6": {
+      "Brightness": 100
+    },
+    "013e9e3b19f20bf7816c3b5b681a69876f3edd91caa35914a6072642208557ec": {
+      "Brightness": 100
+    },
+    "f13fbaec7b586531e223d9e62f7278801f8d316200586d37e168ce425e9189b7": {
+      "Brightness": 100
+    },
+    "15e1c3a4a9cc73d53e3f83b5a1fe379ea4bf5b221996d562f571fced27ee7104": {
+      "Brightness": 100
+    }
+  },
+  "landryGreen": {
+    "5edf46fd6fa627ac25ebb608713c005e2c29fe1113833e13c679fbd404dfee3b": {
+      "Hue": 132,
+      "Saturation": 100,
+      "Brightness": 100
+    },
+    "42a94e312af4414ca14e1ca455496b7f445b5595d63eb7ef88c46bd7f434faf6": {
+      "Hue": 0,
+      "Saturation": 0,
+      "Brightness": 100
+    },
+    "013e9e3b19f20bf7816c3b5b681a69876f3edd91caa35914a6072642208557ec": {
+      "Hue": 0,
+      "Saturation": 0,
+      "Brightness": 100
+    },
+    "f13fbaec7b586531e223d9e62f7278801f8d316200586d37e168ce425e9189b7": {
+      "Hue": 0,
+      "Saturation": 0,
+      "Brightness": 100
+    },
+    "15e1c3a4a9cc73d53e3f83b5a1fe379ea4bf5b221996d562f571fced27ee7104": {
+      "Hue": 0,
+      "Saturation": 0,
+      "Brightness": 100
+    }
+  },
+  "landryWhite": {
+    "5edf46fd6fa627ac25ebb608713c005e2c29fe1113833e13c679fbd404dfee3b": {
+      "Hue": 284,
+      "Saturation": 3,
+      "ColorTemperature": 140,
+      "Brightness": 100
+    },
+    "42a94e312af4414ca14e1ca455496b7f445b5595d63eb7ef88c46bd7f434faf6": {
+      "Hue": 284,
+      "Saturation": 3,
+      "ColorTemperature": 140,
+      "Brightness": 100
+    },
+    "013e9e3b19f20bf7816c3b5b681a69876f3edd91caa35914a6072642208557ec": {
+      "Hue": 284,
+      "Saturation": 3,
+      "ColorTemperature": 140,
+      "Brightness": 100
+    },
+    "f13fbaec7b586531e223d9e62f7278801f8d316200586d37e168ce425e9189b7": {
+      "Hue": 284,
+      "Saturation": 3,
+      "ColorTemperature": 140,
+      "Brightness": 100
+    },
+    "15e1c3a4a9cc73d53e3f83b5a1fe379ea4bf5b221996d562f571fced27ee7104": {
+      "Hue": 284,
+      "Saturation": 3,
+      "ColorTemperature": 140,
+      "Brightness": 100
+    }
+  }
+}

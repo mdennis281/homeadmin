@@ -1,0 +1,22 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.navbar {
+    background-color: #1e1e1e;
+}
+
+.btn {
+    margin-right: 0.5rem;
+}
+
+.custom-range {
+    width: 100%;
+}

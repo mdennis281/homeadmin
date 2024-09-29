@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="mt-4 room-name">
+            <a href="/{{ '?recordAction='+action_recording if action_recording else '' }}">
+                <span class="material-symbols-outlined">
+                    arrow_back
+                </span>
+                
+                {% include "recording.html" %}
+            </a>
+            {{ room_name }}
+        </h1>
+        <div class="device-list mt-4">
+            {% for device in devices %}
+                {% set device_type = device.type %}
+                {% include 'devices/' + device_type + '.html' %}
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            {% for device in devices %}
+                loadDevice('{{ device.uniqueId }}', '{{ device.type }}');
+            {% endfor %}
+        });
+    </script>
+    
+{% endblock %}

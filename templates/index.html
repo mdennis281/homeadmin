@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="mt-4">
+        HomeAdmin
+        {% include "recording.html" %}
+    </h1>
+    <div class="list-group mt-4">
+        {% for room in rooms %}
+        <a href="{{ url_for('room', room_name=room.name) }}{{ '?recordAction='+action_recording if action_recording else '' }}" class="list-group-item list-group-item-action bg-dark text-white">
+            {{ room.name }}
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}

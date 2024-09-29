@@ -1,0 +1,50 @@
+/* Existing styles remain unchanged */
+
+/* Styles for actions page */
+#actions-container .action {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.action h5 {
+    color: #ffffff;
+}
+
+.action .btn {
+    margin-right: 5px;
+}
+
+/* Styles for create action page */
+#device-list .device-select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2a2a2a;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.device-select h5 {
+    margin: 0;
+    color: #fff;
+}
+
+.device-select input[type="checkbox"] {
+    transform: scale(1.5);
+}
+
+/* Display current value next to sliders */
+.slider-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider-value {
+    margin-left: 10px;
+    width: 40px;
+    text-align: right;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Garage Door</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Reset default margins and paddings */
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Center the garage container and set dimensions */
+        .garage-container {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            height: 400px;
+            margin: 50px auto;
+            background-color: #ccc;
+            overflow: hidden;
+            border: 1px solid #999;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Style the garage interior */
+        .garage-interior {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #888;
+            background-image: url('garage_interior.webp'); /* Optional background image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Style the garage door */
+        .garage-door {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: #aaa;
+            background: linear-gradient(to bottom, #ddd, #aaa);
+            z-index: 1;
+            transition: transform 1s ease-in-out;
+            transform-origin: bottom;
+            cursor: pointer;
+            /* Create paneled effect */
+            background-image: 
+                linear-gradient(transparent 75%, rgba(0,0,0,0.1) 75%), /* horizontal lines */
+                linear-gradient(90deg, transparent 75%, rgba(0,0,0,0.1) 75%); /* vertical lines */
+            background-size: 
+                100% 25%, /* width height for horizontal lines */
+                25% 100%; /* width height for vertical lines */
+            box-shadow: inset 0 -1px 0 rgba(0,0,0,0.2);
+        }
+
+        /* Open state of the door */
+        .garage-door.open {
+            transform: translateY(-100%);
+            box-shadow: none;
+        }
+
+        /* Add subtle shadow to enhance realism */
+        .garage-door::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(rgba(0,0,0,0.2), transparent);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .garage-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Garage container -->
+    <div class="garage-container">
+        <!-- Garage door -->
+        <div class="garage-door"></div>
+        <!-- Garage interior -->
+        <div class="garage-interior"></div>
+    </div>
+
+    <!-- Optionally include sound effects -->
+    <!--
+    <audio id="door-sound" src="door-sound.mp3"></audio>
+    -->
+
+    <script>
+        // Wait until the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select the garage door element
+            var garageDoor = document.querySelector('.garage-door');
+            // Select the audio element (if sound effects are used)
+            var doorSound = document.getElementById('door-sound');
+
+            var garageContainer = document.querySelector('garage-container');
+
+            // Add click event listener to the garage door
+            garageContainer.addEventListener('click', function() {
+                // Toggle the 'open' class to open/close the door
+                garageDoor.classList.toggle('open');
+
+                // Optionally play sound effect
+                /*
+                if (doorSound) {
+                    doorSound.currentTime = 0;
+                    doorSound.play();
+                }
+                */
+            });
+        });
+    </script>
+</body>
+</html>

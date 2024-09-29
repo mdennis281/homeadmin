@@ -1,0 +1,32 @@
+<div class="card device-card mb-3" data-unique-id="{{ uniqueId }}">
+    <div class="card-body">
+        <h5 class="card-title">{{ serviceName }}</h5>
+        <div class="form-group form-check">
+            <input type="checkbox" id="on-{{ uniqueId }}" class="form-check-input toggle-on-off" {% if values.On %}checked{% endif %}>
+            <label class="form-check-label" for="on-{{ uniqueId }}">On/Off</label>
+        </div>
+        {% for char in characteristics %}
+            {% if char.type == 'Brightness' %}
+                <div class="form-group">
+                    <label for="brightness-{{ uniqueId }}">Brightness</label>
+                    <input type="range" id="brightness-{{ uniqueId }}" min="{{ char.minValue }}" max="{{ char.maxValue }}" value="{{ values.Brightness }}" class="custom-range">
+                </div>
+            {% elif char.type == 'Hue' %}
+                <div class="form-group">
+                    <label for="hue-{{ uniqueId }}">Hue</label>
+                    <input type="range" id="hue-{{ uniqueId }}" min="{{ char.minValue }}" max="{{ char.maxValue }}" value="{{ values.Hue }}" class="custom-range">
+                </div>
+            {% elif char.type == 'Saturation' %}
+                <div class="form-group">
+                    <label for="saturation-{{ uniqueId }}">Saturation</label>
+                    <input type="range" id="saturation-{{ uniqueId }}" min="{{ char.minValue }}" max="{{ char.maxValue }}" value="{{ values.Saturation }}" class="custom-range">
+                </div>
+            {% elif char.type == 'ColorTemperature' %}
+                <div class="form-group">
+                    <label for="colortemperature-{{ uniqueId }}">Color Temperature</label>
+                    <input type="range" id="colortemperature-{{ uniqueId }}" min="{{ char.minValue }}" max="{{ char.maxValue }}" value="{{ values.ColorTemperature }}" class="custom-range">
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

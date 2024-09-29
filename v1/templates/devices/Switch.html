@@ -1,0 +1,11 @@
+<div class="device switch mb-4" id="device-{{ device.uniqueId }}">
+    <h3>{{ device.serviceName }}</h3>
+    <div class="form-check form-switch">
+        {% for characteristic in device.characteristics %}
+            {% if characteristic.type == 'On' %}
+                <input class="form-check-input" type="checkbox" id="on-{{ device.uniqueId }}" {% if characteristic.value %}checked{% endif %}>
+                <label class="form-check-label" for="on-{{ device.uniqueId }}">On</label>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

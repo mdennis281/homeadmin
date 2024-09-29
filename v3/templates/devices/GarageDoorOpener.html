@@ -1,0 +1,15 @@
+{% set state_mapping = {
+    0: 'Open',
+    1: 'Closed',
+    2: 'Opening',
+    3: 'Closing',
+    4: 'Stopped'
+} %}
+<div class="device garagedooropener mb-4" id="device-{{ device.uniqueId }}">
+    <h3>{{ device.serviceName }}</h3>
+    <div class="btn-group mb-2" role="group" aria-label="Garage Door Controls">
+        <button type="button" class="btn btn-secondary" id="open-{{ device.uniqueId }}">Open</button>
+        <button type="button" class="btn btn-secondary" id="close-{{ device.uniqueId }}">Close</button>
+    </div>
+    <p>Current State: <span id="state-{{ device.uniqueId }}">{{ state_mapping[device.values['CurrentDoorState']] }}</span></p>
+</div>

@@ -1,0 +1,32 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+}
+
+.device {
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+.form-check-input {
+    cursor: pointer;
+}
+
+.form-range {
+    width: 100%;
+}
+
+.btn-secondary {
+    background-color: #333;
+    border-color: #333;
+}
+
+.btn-secondary:hover {
+    background-color: #444;
+    border-color: #444;
+}

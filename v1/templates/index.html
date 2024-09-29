@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="mt-4">Rooms</h1>
+<ul class="list-group list-group-flush">
+    {% for room in rooms %}
+    <li class="list-group-item bg-dark">
+        <a href="{{ url_for('room', room_name=room.name) }}" class="text-white">{{ room.name }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

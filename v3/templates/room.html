@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="mt-4">{{ room_name }}</h1>
+<div class="devices">
+  {% for device in devices %}
+    {% include 'devices/' + device.type + '.html' %}
+  {% endfor %}
+</div>
+{% endblock %}
+{% block scripts %}
+    {% set device_types = devices | map(attribute='type') | unique | list %}
+    {% for device_type in device_types %}
+    <script src="{{ url_for('static', filename='js/devices/' + device_type + '.js') }}"></script>
+    {% endfor %}
+{% endblock %}

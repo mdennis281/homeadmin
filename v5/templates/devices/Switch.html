@@ -1,0 +1,9 @@
+<div class="device card mb-3" data-unique-id="{{ device.uniqueId }}">
+    <div class="card-body">
+        <h5 class="card-title">{{ device.serviceName }}</h5>
+        <div class="form-group">
+            <label>On/Off</label>
+            <input type="checkbox" class="toggle-on-off" {% if device.values.On %}checked{% endif %}>
+        </div>
+    </div>
+</div>
