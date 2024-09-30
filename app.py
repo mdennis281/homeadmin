@@ -4,16 +4,18 @@ from flask_cors import CORS
 from homebridge.client import HomeBridgeClient
 import threading
 from homebridge.action_manager import ActionManager
-import json
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
 # Initialize HomeBridgeClient with your credentials
-HOME_BRIDGE_HOST = os.getenv('HOME_BRIDGE_HOST', 'http://10.0.8.1')
-HOME_BRIDGE_USER = os.getenv('HOME_BRIDGE_USER','dipduo')
-HOME_BRIDGE_PASSWORD = os.getenv('HOME_BRIDGE_PASSWORD','mdennis281')
+HOME_BRIDGE_HOST = os.getenv('HOME_BRIDGE_HOST')
+HOME_BRIDGE_USER = os.getenv('HOME_BRIDGE_USER')
+HOME_BRIDGE_PASSWORD = os.getenv('HOME_BRIDGE_PASSWORD')
 
 hbc = HomeBridgeClient(
     HOME_BRIDGE_HOST, 
