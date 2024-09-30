@@ -157,4 +157,4 @@ def handle_exception(e):
     return jsonify(response), 500
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0',ssl_context=('george.dipduo.com.crt', 'george.dipduo.com.key'))
+    app.run(debug=False,host='0.0.0.0',ssl_context=('george.dipduo.com.crt', 'george.dipduo.com.key'))
