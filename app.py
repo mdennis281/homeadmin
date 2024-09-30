@@ -1,5 +1,5 @@
 
-from flask import Flask, jsonify, render_template, request, redirect, url_for,Response,abort
+from flask import Flask, jsonify, render_template, request, redirect, url_for,Response,abort, make_response
 from flask_cors import CORS
 from homebridge.client import HomeBridgeClient
 import threading
@@ -25,12 +25,35 @@ hbc = HomeBridgeClient(
 
 @app.before_request
 def validate_user():
+    # for the love of god, dont judge me for this.
+    # im just trying to have something mildly secure
+    # until i have the energy to handle this better
+    auth_opts = [
+            request.cookies,
+            request.args,
+            request.headers
+    ]
     
-    auth = request.headers.get('SecretAuth')
+
     ip = request.remote_addr
     if not ip.startswith('10.0.'):
+        auth = None
+        for opt in auth_opts:
+            auth = opt.get('SecretAuth',auth)
+        
         if auth != HOME_BRIDGE_PASSWORD:
             abort(401)
+
+@app.route('/login')
+def no_judging():
+    
+    r = Response('Login set')
+    r.set_cookie(
+        'SecretAuth',
+        request.args.get('SecretAuth'),
+        max_age=9999999
+    )
+    return r
 
 
 
@@ -159,4 +182,4 @@ def handle_exception(e):
     return jsonify(response), 500
 
 if __name__ == '__main__':
-    app.run(debug=False,host='0.0.0.0',ssl_context=('george.dipduo.com.crt', 'george.dipduo.com.key'))
+    app.run(debug=False)
