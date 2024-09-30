@@ -26,7 +26,7 @@ def validate_user():
     
     auth = request.headers.get('SecretAuth')
     ip = request.remote_addr
-    if ip not in ['127.0.0.1']:
+    if not ip.startswith('10.0.'):
         if auth != HOME_BRIDGE_PASSWORD:
             abort(401)
 
