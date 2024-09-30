@@ -35,14 +35,14 @@ def validate_user():
     ]
     
 
-    ip = request.remote_addr
-    if not ip.startswith('10.0.'):
-        auth = None
-        for opt in auth_opts:
-            auth = opt.get('SecretAuth',auth)
-        
-        if auth != HOME_BRIDGE_PASSWORD:
-            abort(401)
+
+
+    auth = None
+    for opt in auth_opts:
+        auth = opt.get('SecretAuth',auth)
+    
+    if auth != HOME_BRIDGE_PASSWORD:
+        abort(401)
 
 @app.route('/login')
 def no_judging():
