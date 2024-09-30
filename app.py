@@ -11,8 +11,15 @@ app = Flask(__name__)
 CORS(app)
 
 # Initialize HomeBridgeClient with your credentials
-from config import HOME_BRIDGE_HOST, HOME_BRIDGE_USER, HOME_BRIDGE_PASSWORD
-hbc = HomeBridgeClient(HOME_BRIDGE_HOST, HOME_BRIDGE_USER, HOME_BRIDGE_PASSWORD)
+HOME_BRIDGE_HOST = os.getenv('HOME_BRIDGE_HOST', 'http://10.0.8.1')
+HOME_BRIDGE_USER = os.getenv('HOME_BRIDGE_USER','dipduo')
+HOME_BRIDGE_PASSWORD = os.getenv('HOME_BRIDGE_PASSWORD','mdennis281')
+
+hbc = HomeBridgeClient(
+    HOME_BRIDGE_HOST, 
+    HOME_BRIDGE_USER, 
+    HOME_BRIDGE_PASSWORD
+)
 
 @app.before_request
 def validate_user():

@@ -198,5 +198,13 @@
       "ColorTemperature": 140,
       "Brightness": 100
     }
+  },
+  "example": {
+    "a350401a225d73b27041e7d680ec24dcdeba5d027ff6cc37eaafc2d53b4d2b18": {
+      "On": 0
+    },
+    "26551fdf0ab7235fb006fd90f42af3fdf396050b9d568d93d7a85afc3d7f5bac": {
+      "On": 0
+    }
   }
 }
