@@ -1,6 +1,7 @@
 from flask import Blueprint, request, jsonify, abort, session
 from functools import wraps
 from user_manager import UserManager
+from typing import List
 
 api_bp = Blueprint('api', __name__)
 
@@ -28,7 +29,7 @@ def api_auth_required(f):
 
 from homebridge.client import HomeBridgeClient
 from homebridge.action_manager import ActionManager
-import threading
+from threading import Thread
 import os
 
 HOME_BRIDGE_HOST = os.getenv('HOME_BRIDGE_HOST')
@@ -87,6 +88,8 @@ def update_device(unique_id, data=None):
         'updatedCharacteristics': updated_device.get_characteristics()
     })
 
+
+
 @api_bp.route('/actions', methods=['GET'])
 @api_auth_required
 def list_actions():
@@ -113,13 +116,19 @@ def save_action(action_name):
     am.save(action_name, action_data)
     return jsonify({'message': 'Action saved successfully'})
 
+
+
 @api_bp.route('/actions/<action_name>/run')
 @api_auth_required
 def run_action(action_name):
     action = am.get(action_name)
-    threads = []
+    threads: List[Thread] = []
+    updated_devices = []
     for device, updates in action.items():
-        threads.append(threading.Thread(target=update_device, args=(device, updates)))
+        threads.append(Thread(
+                target=do_update_device_threaded, 
+                args=(device, updates, updated_devices)
+        ))
         threads[-1].start()
     for t in threads:
         t.join()
@@ -128,9 +137,19 @@ def run_action(action_name):
     return jsonify(
         {
             'status': 'success',
-            'msg': f'{action_name} applied changes to {len(action.keys())} device(s)'
+            'msg': f'{action_name} applied changes to {len(updated_devices)} device(s)'
         }
     )
+
+def do_update_device_threaded(unique_id,data,updated_devices:list):
+    if data is None:
+        data = request.json
+    device = hbc.get_accessory(unique_id)
+    for char_type, value in data.items():
+        device.set_characteristic(char_type, value)
+    updated_device = hbc.update_accessory_characteristic(device)
+    if updated_device:
+        updated_devices.append(updated_device.serviceName)
 
 @api_bp.errorhandler(Exception)
 def handle_exception(e):

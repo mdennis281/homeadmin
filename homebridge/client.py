@@ -125,10 +125,21 @@ class HomeBridgeClient:
     def get_accessory(self,uniqueId:str):
         return Device.from_dict(self.api.get(f'/api/accessories/{uniqueId}'))
     
-    def update_accessory_characteristic(self,device: Device):
+    def update_accessory_characteristic(self,device: Device)-> Device:
         for c in device.get_changed_characteristics():
             self.api.put(f'/api/accessories/{device.uniqueId}',c)
-        return self.get_accessory(device.uniqueId)
+        newState = self.get_accessory(device.uniqueId)
+
+        for c in device.get_changed_characteristics():
+            for cc in newState.get_characteristics():
+                if cc['type'] == c['characteristicType']:
+                    if cc['value'] != c['value']:
+                        # device might be offline
+                        return None
+
+        return newState
+                        
+
 
             
         
