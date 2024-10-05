@@ -121,15 +121,29 @@ def save_action(action_name):
 @api_bp.route('/actions/<action_name>/run')
 @api_auth_required
 def run_action(action_name):
+    updated_devices = []
+
+    def do_update_device_threaded(unique_id,data):
+        if data is None:
+            data = request.json
+        device = hbc.get_accessory(unique_id)
+        for char_type, value in data.items():
+            device.set_characteristic(char_type, value)
+        updated_device = hbc.update_accessory_characteristic(device)
+        if updated_device:
+            updated_devices.append(updated_device.serviceName)
+
     action = am.get(action_name)
     threads: List[Thread] = []
-    updated_devices = []
+
+    # thread off updates (this is slow for big action groups otherwise)
     for device, updates in action.items():
         threads.append(Thread(
                 target=do_update_device_threaded, 
                 args=(device, updates, updated_devices)
         ))
         threads[-1].start()
+
     for t in threads:
         t.join()
 
@@ -141,15 +155,7 @@ def run_action(action_name):
         }
     )
 
-def do_update_device_threaded(unique_id,data,updated_devices:list):
-    if data is None:
-        data = request.json
-    device = hbc.get_accessory(unique_id)
-    for char_type, value in data.items():
-        device.set_characteristic(char_type, value)
-    updated_device = hbc.update_accessory_characteristic(device)
-    if updated_device:
-        updated_devices.append(updated_device.serviceName)
+
 
 @api_bp.errorhandler(Exception)
 def handle_exception(e):
