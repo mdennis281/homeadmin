@@ -134,6 +134,7 @@ class HomeBridgeClient:
             for cc in newState.get_characteristics():
                 if cc['type'] == c['characteristicType']:
                     if cc['value'] != c['value']:
+                        print(f"{cc['value']} != {c['value']}")
                         # device might be offline
                         return None
 

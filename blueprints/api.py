@@ -79,6 +79,7 @@ def update_device(unique_id, data=None):
     if data is None:
         data = request.json
     device = hbc.get_accessory(unique_id)
+    print(device.serviceName)
     for char_type, value in data.items():
         print(char_type, value)
         device.set_characteristic(char_type, value)
