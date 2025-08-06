@@ -13,6 +13,15 @@ function loadDevice(uniqueId, deviceType) {
     });
 }
 
+function initDevice(device) {
+    var controlsDiv = $('#controls-' + device.uniqueId);
+    $.getScript('/static/js/devices/' + device.type + '.js', function() {
+        initDeviceControls(device, controlsDiv);
+        if (isDebug()) 
+            debugTable(device.serviceCharacteristics, controlsDiv);
+    });
+}
+
 var antiFloodTimeout = null;
 function updateDevice(uniqueId, characteristics) {
     function doUpdate(uniqueId, characteristics) {
